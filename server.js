@@ -10,7 +10,7 @@ const morgan = require("morgan");
 require('dotenv').config()
 const mongoose = require("mongoose")
 console.log('Dev Branch')
-const authController = require('./controllers/auth')
+const authController = require('./controllers/auths for project')
 const session = require('express-session');
 const isSignedIn = require("./middleware/is-signed-in.js")
 const passUserToView = require('./middleware/pass-user-to-view.js')
@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
   }
 })
 
-app.use('/auth', authController)
+app.use('/auths for project', authController)
 app.use(isSignedIn)
 app.use('/users/:userId/bank-accounts', bankController)
 
