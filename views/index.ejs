@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="icon" type="image/png" href="12322.png">
+    <title>Applications</title>
+</head>
+<body>
+    <img src="12322.png">
+    <div class="navbar">
+    <%- include('./partials/_navbar.ejs') %>
+    </div>
+    <h1 class="title">Welcome to AWB Bank</h1>
+    <h2 class="subtitle">Hello Please Sign-in So That We Can Serve You In The Best Way</h2>
+
+    
+    <% if(user){ %>
+    <a class="dashboard-link" href="/users/<%= user._id %>/bank-accounts/show">Dashboard</a>
+    <% } %>
+    
+ 
+</body>
+</html>
