@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const cardSchema = new mongoose.Schema({
     cardType: {
         type: String,
-        required: ['Visa', 'Mastercard', 'Discover', 'American Express']
+        required: ['Visa', 'Mastercard', 'Discover', 'American Express', 'Ila Card']
     },
     phoneNumber: {
         type: String,

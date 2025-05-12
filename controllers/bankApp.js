@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     res.render('applications/error.ejs')
    }
 })
-// show card
+// card
 router.get('/show', async (req,res)=>{
     console.log("In SHOW ROUTE")
     try {
@@ -30,7 +30,7 @@ router.get('/show', async (req,res)=>{
         res.render('error.ejs')
     }
 })
-//create new cards
+
 router.post('/cards', async (req,res)=>{
     try {
         console.log(req.body)
@@ -42,11 +42,9 @@ router.post('/cards', async (req,res)=>{
         res.render('applications/error.ejs')
     }
 })
-//show per card
+
 router.get("/:cardId/card", async (req,res)=>{
     try {
-        // const currentUser = await User.findById(req.session._id).populate('cards')
-        // console.log(currentUser)
         const card = await Card.findById(req.params.cardId)
         console.log("CARDS", card)
         res.render('applications/card.ejs',{card:card})
@@ -55,8 +53,6 @@ router.get("/:cardId/card", async (req,res)=>{
     }
 })
 
-
-//create new account
 router.post('/accounts', async (req,res)=>{
     try {
         
@@ -70,7 +66,7 @@ router.post('/accounts', async (req,res)=>{
 })
 
 
-// show per account
+
 router.get("/:accountId/account", async (req,res)=>{
     try {
         const account = await Account.findById(req.params.accountId)
@@ -79,7 +75,7 @@ router.get("/:accountId/account", async (req,res)=>{
         res.render('applications/error.ejs')
     }
 })
-// Show form for new account
+
 router.get('/new', async (req, res) => {
     try {
         res.render('applications/new.ejs')
@@ -87,7 +83,7 @@ router.get('/new', async (req, res) => {
         res.render('applications/error.ejs')
     }
 })
-//delete card
+
 router.delete('/:cardId', async (req,res)=>{
     try {
         const card = await Card.findByIdAndDelete(req.params.cardId)
@@ -96,7 +92,7 @@ router.delete('/:cardId', async (req,res)=>{
         res.render('applications/error.ejs')
     }
 })
-//delete account
+
 router.delete('/account/:accountId', async (req,res)=>{
     try {
         console.log(req.params)
@@ -106,7 +102,7 @@ router.delete('/account/:accountId', async (req,res)=>{
         res.render('applications/error.ejs')
     }
 })
-//update account
+
 router.get('/:accountId/edit', async (req,res)=>{
     try {
         const account = await Account.findById(req.params.accountId)

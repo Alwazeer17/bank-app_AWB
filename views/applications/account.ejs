@@ -20,14 +20,14 @@
    <div class="update-account-container">
     <h2>Update Your Account</h2>
     <ul>
-        <li class="update-account-link"><a href="/users/<%= user._id %>/bank-accounts/<%= account._id %>/edit">Update Your Account</a></li>
+        <li class="update-account-link"><a href="/users/<%= user._id %>/bank-accounts/<%= account._id %>/edit">Update Account</a></li>
     </ul>
     </div>
     <div class="delete-account-container">
-    <h2>Delete Your Account</h2>
+    <h2>Delete Account</h2>
     <ul>
         <form action="/users/<%= user._id %>/bank-accounts/account/<%= account._id %>?_method=DELETE" method="POST">
-            <button id="delete-button">Delete Your Account</button>
+            <button id="delete-button">Delete Account</button>
         </form>
     </div>
     </ul>

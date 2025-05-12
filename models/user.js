@@ -25,21 +25,19 @@ const applicationSchema = new mongoose.Schema({
     },
     phoneNumber: {
         type: String,
-        // required: true
+        
     },
     age: {
         type: Number,
-        // required: true,
         min: 18,
         max: 100
     },
     gender: {
         type: String,
-        // required: ['male', 'female']
     },
     job: {
         type: String,
-        enum: ['student', 'employee', 'unemployed', 'self-employed', 'retired', 'other']
+        enum: ['student', 'employee', 'self-employed', 'retired', 'other']
     },
     address: {
         type: String,
