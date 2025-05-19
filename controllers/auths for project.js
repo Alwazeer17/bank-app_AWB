@@ -46,7 +46,7 @@ router.post('/sign-up', async (req,res)=>{
 
         await User.create(req.body);
 
-        res.redirect('/auths for project/sign-in')
+        res.redirect('/auths-for-project/sign-in')
     } catch (error) {
         console.log(error);
         res.redirect('/')
@@ -89,9 +89,9 @@ router.post('/sign-in', async (req,res)=>{
 router.post('/sign-out', (req,res)=>{
    if(req.session.user){
     req.session.destroy();
-    res.redirect('/auths for project/sign-in')
+    res.redirect('/auths-for-project/sign-in')
    }else{
-    res.redirect('/auths for project/sign-out')
+    res.redirect('/auths-for-project/sign-out')
    }
 })
 module.exports = router;

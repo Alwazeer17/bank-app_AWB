@@ -49,11 +49,15 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch(()=>{console.log("ERROR CONNECTING TO DATABASE ABDULLA")})
 
 
+app.get('/test',(req,res)=>{
+  res.send( "<h1>test</h1>")
+})
 
 
 // =======================
 // 4. ROUTES
 // =======================
+
 app.get('/', (req, res) => {
   if(req.session.user){
     res.redirect(`/users/${req.session.user._id}/bank-accounts`)
@@ -62,8 +66,8 @@ app.get('/', (req, res) => {
   }
 })
 
-app.use('/auths for project', authController)
-app.use(isSignedIn)
+app.use('/auths-for-project', authController)
+// app.use(isSignedIn)
 app.use('/users/:userId/bank-accounts', bankController)
 
 
